@@ -5,3 +5,42 @@
  */
 
 // You can delete this file if you're not using it
+// const path = require(`path`)
+
+// exports.createPages = async ({ actions, graphql, reporter }) => {
+//   const { createPage } = actions
+
+//   const intro = path.resolve(`src/components/intro.js`)
+
+//   const result = await graphql(`
+//     {
+//       allMarkdownRemark(
+//         limit: 1000
+//       ) {
+//         edges {
+//           node {
+//             frontmatter {
+//               title
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `).then(result => {
+//     console.log(result)
+//   })
+
+//   // Handle errors
+//   if (result.errors) {
+//     reporter.panicOnBuild(`Error while running GraphQL query.`)
+//     return
+//   }
+
+//   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+//     createPage({
+//       title: node.frontmatter.title,
+//       component: intro,
+//       context: {}, // additional data can be passed via context
+//     })
+//   })
+// }
