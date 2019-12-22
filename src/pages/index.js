@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <Intro data={data} />
+    <Intro data={data.intro} />
     {/* <SEO title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -22,12 +22,14 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-    query {
-        markdownRemark(frontmatter: { title: { eq: "intro" } }) {
-            html
-            frontmatter {
-                name
-            }
-        }
+    {
+      intro: markdownRemark(frontmatter: { template: { eq: "intro" } }) {
+          html
+          frontmatter {
+            name
+            intro
+            sub
+          }
+      }
     }
 `

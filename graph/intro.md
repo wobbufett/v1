@@ -1,5 +1,5 @@
 ---
-title: "intro"
+template: "intro"
 name: "Robert Hwang"
 intro: "Welcome to my personal website!"
 sub: "My name is"
