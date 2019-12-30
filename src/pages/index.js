@@ -1,8 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import Intro from "../components/intro"
-import Image from "../components/image"
+import { Layout, Intro } from '@components'
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => (

@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { GlobalStyle, design } from '@styles'
 
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,6 +34,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
+        <GlobalStyle></GlobalStyle>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-// const path = require(`path`)
+const path = require(`path`)
 
 // exports.createPages = async ({ actions, graphql, reporter }) => {
 //   const { createPage } = actions
@@ -44,3 +44,17 @@
 //     })
 //   })
 // }
+
+exports.onCreateWebpackConfig = ({
+    stage, getConfig, rules, loaders, actions 
+}) => {
+    actions.setWebpackConfig({
+        resolve: {
+            alias: {
+                '@components': path.resolve(__dirname, 'src/components'),
+                '@pages': path.resolve(__dirname, 'src/pages'),
+                '@styles': path.resolve(__dirname, 'src/styles'),
+            },
+        },
+    });
+};
